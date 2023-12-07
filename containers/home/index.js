@@ -3,9 +3,7 @@ import React from 'react'
 import { FeaturedMovie } from '@/components/featured-movie'
 import { MoviesSection } from '@/components/movies-section'
 import Categories from '@/components/categories'
-//Data
-import Movies from '@/mocks/movies.json'
-import Genres from '@/mocks/genres.json'
+
 
 function HomeContainer({
   topPopularData = [],
@@ -16,7 +14,7 @@ function HomeContainer({
 }) {
   return (
     <div >
-      <FeaturedMovie movie={Movies.results[0]} />
+      <FeaturedMovie movie={popularData?.[0]} />
       <Categories categories={categories.slice(0, 5)} />
       {selectedCategory.movies.length > 0 && (<MoviesSection title={
 

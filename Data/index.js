@@ -30,3 +30,8 @@ export const singleCategoryGetData = async (genreid) => {
     const req = await res.json()
     return req.results
 }
+export const moviesDetailGetData = async (id) => {
+    const res = await fetch(process.env.API_URL + `/movie/${id}`, options)
+    const req = await res.json()
+    return req
+}

@@ -1,6 +1,5 @@
 import { movieListGetData, populerGetData, singleCategoryGetData, topPopulerGetData } from "@/Data";
 import HomeContainer from "@/containers/home";
-import Movies from '@/mocks/movies.json'
 
 
 
