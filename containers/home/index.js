@@ -7,7 +7,7 @@ import Categories from '@/components/categories'
 import Movies from '@/mocks/movies.json'
 import Genres from '@/mocks/genres.json'
 
-function HomeContainer({ selectedCategory }) {
+function HomeContainer({ topPopularData = {}, selectedCategory, popularData = {} }) {
   return (
     <div >
       <FeaturedMovie movie={Movies.results[0]} />
@@ -18,14 +18,14 @@ function HomeContainer({ selectedCategory }) {
 
         movies={selectedCategory.movies} />)}
 
-      <MoviesSection title={"Populer Films"}
-        movies={Movies.results.slice(0, 7)}
+      <MoviesSection title={"Top Popü Films"}
+        movies={topPopularData.slice(0, 7)}
       />
       <MoviesSection title={"Populer Films"}
-        movies={Movies.results.slice(7, 14)}
+        movies={popularData.slice(7, 14)}
       />
       <MoviesSection title={"Favorites Films"}
-        movies={Movies.results.slice(14, 21)}
+        movies={popularData.slice(14, 21)}
       />
     </div>
   )
