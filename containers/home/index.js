@@ -7,14 +7,20 @@ import Categories from '@/components/categories'
 import Movies from '@/mocks/movies.json'
 import Genres from '@/mocks/genres.json'
 
-function HomeContainer({ topPopularData = {}, selectedCategory, popularData = {} }) {
+function HomeContainer({
+  topPopularData = [],
+  selectedCategory,
+  popularData = [],
+  categories = []
+
+}) {
   return (
     <div >
       <FeaturedMovie movie={Movies.results[0]} />
-      <Categories categories={Genres.genres.slice(0, 5)} />
+      <Categories categories={categories.slice(0, 5)} />
       {selectedCategory.movies.length > 0 && (<MoviesSection title={
 
-        Genres.genres.find(item => `${item.id}` === selectedCategory.id).name}
+        categories.find(item => `${item.id}` === selectedCategory.id).name}
 
         movies={selectedCategory.movies} />)}
 
