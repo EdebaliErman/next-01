@@ -1,4 +1,4 @@
-import { movieListGetData, populerGetData, singleCategoryGetData, topPopulerGetData } from "@/Data";
+import { movieListGetData, populerGetData, singleCategoryGetData, topPopulerGetData } from "@/services";
 import HomeContainer from "@/containers/home";
 
 
